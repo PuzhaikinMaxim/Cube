@@ -52,6 +52,24 @@ public class Vector {
         lenght = a.x * b.y * c.z + b.x * c.y * a.z + c.x * a.y * b.z - c.x * b.y * a.z - a.x * c.y * b.z - b.x * a.y * c.z;
         return lenght;
     }
+    public double GetX(Vector a)
+    {
+        return a.x;
+    }
+    public double GetY(Vector a)
+    {
+        return a.y;
+    }
+    public double GetZ(Vector a)
+    {
+        return a.z;
+    }
+    public void rotateOX(double angle)
+    {
+        double FY = y;
+        y = y*Math.cos(Math.toRadians(angle)) + z*Math.sin(Math.toRadians(angle));
+        z = -(FY*Math.sin(Math.toRadians(angle))) + z*Math.cos(Math.toRadians(angle));
+    }
     /*
     public double Summ(double x1, double x2, double y1, double y2)
     {
