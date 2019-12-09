@@ -1,34 +1,52 @@
 public class Facet {
     private Vector[] vertex;
     //Color color;
-    public int angle;
-    public Facet(Vector a, Vector b, Vector c, Vector d)
-    {
-        vertex = new Vector[] {a,b,c,d};
+    public double angle;
+    public Facet(Vector a, Vector b, Vector c, Vector d) {
+        vertex = new Vector[]{a, b, c, d};
     }
-    public Facet Rotate(Facet g)
-    {
 
-        return new Facet(a,b,c,d);
+    /*public Facet Rotate(Facet g) {
+
+        return new Facet();
+    }*/
+    public void rotate(double angleX, double angleY, double angleZ) {
+        rotateOX(angleX);
+        rotateOY(angleY);
+        rotateOZ(angleZ);
     }
-    public void Print(Facet a)
+    public void rotateOX(double angle){
+        vertex[0].rotateOX(angle);
+        vertex[1].rotateOX(angle);
+        vertex[2].rotateOX(angle);
+        vertex[3].rotateOX(angle);
+    }
+    public void rotateOY(double angle){
+        vertex[0].rotateOY(angle);
+        vertex[1].rotateOY(angle);
+        vertex[2].rotateOY(angle);
+        vertex[3].rotateOY(angle);
+    }
+    public void rotateOZ(double angle){
+        vertex[0].rotateOZ(angle);
+        vertex[1].rotateOZ(angle);
+        vertex[2].rotateOZ(angle);
+        vertex[3].rotateOZ(angle);
+    }
+    public void this_rotate(Facet a)
     {
-        for(int i = 0;i < 4; ++i)
+        a.rotate(1,2,3);
+        double x;
+        double y;
+        double z;
+        for(int i = 0; i < 4; ++i)
         {
-            double x;
-            double y;
-            double z;
-            x = vertex[i].GetX(vertex[i]);
-            y = vertex[i].GetY(vertex[i]);
-            z = vertex[i].GetZ(vertex[i]);
-            /*System.out.print(x);
-            System.out.print(" ");
-            System.out.print(y);
-            System.out.print(" ");
-            System.out.print(z);
-            System.out.println("");*/
-            System.out.print("Координаты начала:" + vertex[0].GetX(vertex[0]) + " " + vertex[0].GetY(vertex[0]) + " " + vertex[0].GetZ(vertex[0]));
-            System.out.print("Координаты конца" + ver);
+            x = vertex[0].GetX(vertex[i]);
+            y = vertex[0].GetY(vertex[i]);
+            z = vertex[0].GetZ(vertex[i]);
+            System.out.println(x);
+            System.out.println(y);
+            System.out.println(z);
         }
     }
 }

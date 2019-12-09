@@ -70,6 +70,22 @@ public class Vector {
         y = y*Math.cos(Math.toRadians(angle)) + z*Math.sin(Math.toRadians(angle));
         z = -(FY*Math.sin(Math.toRadians(angle))) + z*Math.cos(Math.toRadians(angle));
     }
+    public void rotateOY(double angle) {
+        double fakeX = x;
+        x = x*Math.cos(Math.toRadians(angle))+z*Math.sin(Math.toRadians(angle));
+        z = -(fakeX*Math.sin(Math.toRadians(angle))+z*Math.cos(Math.toRadians(angle)));
+    }
+
+    public void rotateOZ(double angle) {
+        double fakeX = x;
+        x = x*Math.cos(Math.toRadians(angle))-y*Math.sin(Math.toRadians(angle));
+        y = -(fakeX*Math.sin(Math.toRadians(angle))+y*Math.cos(Math.toRadians(angle)));
+    }
+    public void rotate(double angleX, double angleY, double angleZ) {
+        rotateOX(angleX);
+        rotateOY(angleY);
+        rotateOZ(angleZ);
+    }
     /*
     public double Summ(double x1, double x2, double y1, double y2)
     {
